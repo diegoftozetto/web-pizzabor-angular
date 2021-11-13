@@ -1,6 +1,6 @@
 import { Component, OnDestroy, OnInit } from '@angular/core';
 import { FormBuilder, FormGroup } from '@angular/forms';
-import { ActivatedRoute, Params } from '@angular/router';
+import { ActivatedRoute, Params, Router } from '@angular/router';
 
 import { Subject } from 'rxjs';
 import {
@@ -8,9 +8,10 @@ import {
   takeUntil,
 } from 'rxjs/operators';
 
-import { Produto } from '@pizzabor/common';
+import { Produto, IProduto } from '@pizzabor/common';
 
 import { ProdutoEdicaoService } from '../../services/produto-edicao/produto-edicao.service';
+import { ModifyResult } from 'mongodb';
 
 @Component({
   selector: 'pizzabor-produto',
@@ -32,6 +33,7 @@ export class ProdutoComponent implements OnInit, OnDestroy {
   private subUnsubscribe: Subject<void> = new Subject();
 
   constructor(
+    private router: Router,
     private produtoEdicaoService: ProdutoEdicaoService,
     private activatedRoute: ActivatedRoute,
     private formBuilder: FormBuilder,
@@ -56,6 +58,14 @@ export class ProdutoComponent implements OnInit, OnDestroy {
   }
 
   public salvar(): void {
+    const iProduto: IProduto = this.formGroup.value;
+    this.produtoEdicaoService.put(iProduto).subscribe(
+      (results: ModifyResult<IProduto>) => {
+        if (results.ok) {
+          this.router.navigate(['/area-restrita']);
+        }
+      },
+    );
   }
 
 }

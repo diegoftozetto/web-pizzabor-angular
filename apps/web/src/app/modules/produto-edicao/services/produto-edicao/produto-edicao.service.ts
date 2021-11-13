@@ -4,8 +4,10 @@ import {
   Injectable,
 } from '@angular/core';
 
+import { ModifyResult } from 'mongodb';
+
 import { Observable } from 'rxjs';
-import { map } from 'rxjs/operators';
+import { map, take } from 'rxjs/operators';
 
 import {
   Produto,
@@ -28,6 +30,15 @@ export class ProdutoEdicaoService {
       map((iProduto: IProduto) => {
         return Produto.fromJson(iProduto);
       }),
+    );
+  }
+
+  public put(iProduto: IProduto): Observable<ModifyResult<IProduto>> {
+    return this.httpClient.put<ModifyResult<IProduto>>(
+      `${this.apiBaseUrl}/produtos/${iProduto._id}`,
+      iProduto,
+    ).pipe(
+      take(1),
     );
   }
 }
