@@ -24,6 +24,7 @@ import { AreaRestritaComponent } from './components/area-restrita/area-restrita.
 import { AppErrorHandler } from './app-error-handler';
 import { AuthModule } from './modules/auth/auth.module';
 import { AuthGuard } from "./util/AuthGuard";
+import { ListaProdutosCarrinhoComponent } from './components/lista-produtos-carrinho/lista-produtos-carrinho.component';
 
 @NgModule({
   declarations: [
@@ -34,6 +35,7 @@ import { AuthGuard } from "./util/AuthGuard";
     ListaProdutosComponent,
     ReplaceCategoriaPipe,
     AreaRestritaComponent,
+    ListaProdutosCarrinhoComponent,
   ],
   imports: [
     BrowserModule,
