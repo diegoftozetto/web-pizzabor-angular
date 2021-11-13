@@ -21,6 +21,7 @@ import { ReplaceCategoriaPipe } from './pipes/replace-categoria.pipe';
 import { AreaRestritaComponent } from './components/area-restrita/area-restrita.component';
 
 import { AppErrorHandler } from './app-error-handler';
+import { AuthModule } from './modules/auth/auth.module';
 
 @NgModule({
   declarations: [
@@ -43,6 +44,7 @@ import { AppErrorHandler } from './app-error-handler';
     PanelModule,
     TableModule,
     ButtonModule,
+    AuthModule,
   ],
   providers: [
     MessageService,
