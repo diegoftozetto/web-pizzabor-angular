@@ -11,6 +11,7 @@
       <th>Imagem</th>
       <th pSortableColumn="preco">Preço <p-sortIcon field="preco"></p-sortIcon></th>
       <th pSortableColumn="categoria">Categoria <p-sortIcon field="categoria"></p-sortIcon></th>
+      <th pSortableColumn="tamanho">Tamanho <p-sortIcon field="tamanho"></p-sortIcon></th>
       <th></th>
     </tr>
   </ng-template>
@@ -20,6 +21,7 @@
       <td><img [src]="produto.imagem" [alt]="produto.nome" width="100" class="p-shadow-4" /></td>
       <td>{{produto.preco | currency:'BRL'}}</td>
       <td>{{produto.categoria | replaceCategoria }}</td>
+      <td>{{produto.tamanho}}</td>
       <td>
         <button pButton pRipple icon="pi pi-pencil" class="p-button p-button-info p-mr-2" (click)="editar(produto)"></button>
         <button pButton pRipple icon="pi pi-trash" class="p-button p-button-danger" ></button>
