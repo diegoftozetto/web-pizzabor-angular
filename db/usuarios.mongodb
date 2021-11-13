@@ -17,4 +17,11 @@ db.usuarios.insertMany([
     'nome': 'Diego',
     'administrador': false,
   },
+  {
+    '_id': 3,
+    'login': 'teste',
+    'senha': '12345',
+    'nome': 'Teste',
+    'administrador': false,
+  },
 ]);
