@@ -32,7 +32,8 @@ export class ListaProdutosCarrinhoComponent implements OnInit {
     this.activatedRoute.params.pipe(
       takeUntil(this.subUnsubscribe),
     ).subscribe(() => {
-      this.produtosCarrinho$ = this.listaProdutosCarrinhoService.get(Util.getUsuarioLogado()._id);
+      const id: number = Util.getUsuarioLogado() ? Util.getUsuarioLogado()._id : 0;
+      this.produtosCarrinho$ = this.listaProdutosCarrinhoService.get(id);
     });
   }
 
