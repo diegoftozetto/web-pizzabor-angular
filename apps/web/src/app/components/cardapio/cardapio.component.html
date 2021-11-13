@@ -1,1 +1,28 @@
-<p>cardapio works!</p>
+<p-card
+  *ngFor="let produto of (produtos$ | async)"
+  header="{{ produto.nome }}"
+  [style]="{width: '350px'}"
+  styleClass="p-card-shadow"
+>
+  <ng-template pTemplate="header">
+    <img
+      [attr.alt]="produto.descricao"
+      src="{{ produto.imagem }}"
+    />
+  </ng-template>
+  <p>
+    {{ produto.descricao }}
+  </p>
+
+  <p-tag severity="primary">
+    {{ produto.categoria }}
+  </p-tag>
+  <ng-template pTemplate="footer">
+    <p-tag severity="info">
+      {{ produto.tamanho }}
+    </p-tag>
+    <p-tag severity="warning">
+      {{ produto.preco | currency: 'BRL' }}
+    </p-tag>
+  </ng-template>
+</p-card>

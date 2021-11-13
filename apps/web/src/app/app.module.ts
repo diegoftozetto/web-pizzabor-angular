@@ -4,6 +4,8 @@ import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { HttpClientModule } from '@angular/common/http';
 
 import {MenubarModule} from 'primeng/menubar';
+import { CardModule } from 'primeng/card';
+import { TagModule } from 'primeng/tag';
 
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
@@ -22,6 +24,8 @@ import { CardapioComponent } from './components/cardapio/cardapio.component';
     HttpClientModule,
     AppRoutingModule,
     MenubarModule,
+    CardModule,
+    TagModule,
   ],
   providers: [
     {

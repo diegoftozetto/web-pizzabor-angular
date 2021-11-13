@@ -1,5 +1,11 @@
 import { Component, OnInit } from '@angular/core';
 
+import { Observable } from 'rxjs';
+
+import { Produto } from '@pizzabor/common';
+
+import { CardapioService } from '../../services/cardapio/cardapio.service';
+
 @Component({
   selector: 'pizzabor-cardapio',
   templateUrl: './cardapio.component.html',
@@ -7,7 +13,12 @@ import { Component, OnInit } from '@angular/core';
 })
 export class CardapioComponent implements OnInit {
 
-  constructor() { }
+  public produtos$: Observable<Produto[]> = this.cardapioService.getAll();
+
+  constructor(
+    private cardapioService: CardapioService,
+  ) {
+  }
 
   ngOnInit(): void {
   }

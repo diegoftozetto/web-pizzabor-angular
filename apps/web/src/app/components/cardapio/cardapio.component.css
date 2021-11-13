@@ -1,0 +1,14 @@
+:host {
+  display: flex;
+  flex-wrap: wrap;
+
+  margin: 0 0.5em;
+}
+
+p-card {
+  margin: 0.2em;
+}
+
+p-tag {
+  margin: 0 0.2em;
+}
