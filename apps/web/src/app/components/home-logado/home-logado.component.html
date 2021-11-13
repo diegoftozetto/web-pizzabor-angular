@@ -1,1 +1,13 @@
-<p>home-logado works!</p>
+<p-menubar [model]="items">
+  <button
+    pButton
+    (click)="logout()"
+    icon="pi pi-sign-out"
+    type="button"
+    label="Fazer logout"
+    class="p-button-error"
+  >
+  </button>
+</p-menubar>
+<br />
+<router-outlet></router-outlet>

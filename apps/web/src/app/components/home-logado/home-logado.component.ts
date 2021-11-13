@@ -21,8 +21,12 @@ export class HomeLogadoComponent implements OnInit {
 
   public items: MenuItem[] = [
     {
-      label: 'Lista de Produtos (Carrinho)',
-      icon: 'pi pi-list',
+      icon: 'pi pi-arrow-left',
+      routerLink: ['/home'],
+    },
+    {
+      label: 'Carrinho de Compras',
+      icon: 'pi pi-shopping-cart',
       routerLink: ['/home-logado/lista-produtos-carrinho'],
     }
   ];
