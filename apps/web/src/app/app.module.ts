@@ -13,6 +13,7 @@ import { AppComponent } from './app.component';
 import { HomeComponent } from './components/home/home.component';
 import { CardapioComponent } from './components/cardapio/cardapio.component';
 import { SobreComponent } from './components/sobre/sobre.component';
+import { ListaProdutosComponent } from './components/lista-produtos/lista-produtos.component';
 
 @NgModule({
   declarations: [
@@ -20,6 +21,7 @@ import { SobreComponent } from './components/sobre/sobre.component';
     HomeComponent,
     CardapioComponent,
     SobreComponent,
+    ListaProdutosComponent,
   ],
   imports: [
     BrowserModule,
