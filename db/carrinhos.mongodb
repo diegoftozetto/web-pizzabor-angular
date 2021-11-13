@@ -26,7 +26,7 @@ db.carrinhos.insertMany([
       }
     ]
   },
-    { '_id': 2,
+  { '_id': 2,
     'userId': 2,
     'items': [
       {
@@ -47,6 +47,20 @@ db.carrinhos.insertMany([
         'preco': 4.30,
         'quantidade': 2,
       }
+    ]
+  },
+  { '_id': 3,
+    'userId': 3,
+    'items': [
+      {
+        'produtoId': 3,
+        'imagem': "https://images2.imgbox.com/a0/52/emVpeCWE_o.png",
+        'nome': "Pizza Sensação",
+        'categoria': "pizza_doce",
+        'tamanho': "Média",
+        'preco': 35.60,
+        'quantidade': 1,
+      },
     ]
   }
 ]);
