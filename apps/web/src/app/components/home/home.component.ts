@@ -20,6 +20,11 @@ export class HomeComponent implements OnInit {
       icon: 'pi pi-book',
       routerLink: [ '/home' ],
     },
+    {
+      label: 'Sobre',
+      icon: 'pi pi-info-circle',
+      routerLink: [ '/home/sobre' ],
+    },
   ];
 
 }
