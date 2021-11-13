@@ -28,6 +28,7 @@ export class HomeComponent implements OnInit {
     {
       label: 'Entrar',
       icon: 'pi pi-sign-in',
+      routerLink: [ '/area-restrita/lista-produtos' ],
     },
   ];
 
