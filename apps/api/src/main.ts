@@ -5,6 +5,15 @@
 
 import * as express from 'express';
 
+import { MongoClient } from 'mongodb';
+
+MongoClient.connect(
+  'mongodb://web-pizzabor-angular_devcontainer_db_1:27017',
+).then((client: MongoClient) => {
+  app.locals.db = client.db('pizzabor');
+  console.log('Conectado ao MongoDB.');
+});
+
 const app = express();
 
 app.get('/api', (req, res) => {
