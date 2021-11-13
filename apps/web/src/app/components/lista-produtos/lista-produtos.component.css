@@ -1,0 +1,14 @@
+:host {
+  display: flex;
+  flex-wrap: wrap;
+
+  margin: 0 0.5em;
+}
+
+p-table {
+  width: 100%;
+}
+
+button {
+  margin: 0 0.3em;
+}

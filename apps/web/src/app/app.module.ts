@@ -3,10 +3,11 @@ import { BrowserModule } from '@angular/platform-browser';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { HttpClientModule } from '@angular/common/http';
 
-import {MenubarModule} from 'primeng/menubar';
+import { MenubarModule } from 'primeng/menubar';
 import { CardModule } from 'primeng/card';
 import { TagModule } from 'primeng/tag';
 import { PanelModule } from 'primeng/panel';
+import { TableModule } from 'primeng/table';
 
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
@@ -32,6 +33,7 @@ import { ListaProdutosComponent } from './components/lista-produtos/lista-produt
     CardModule,
     TagModule,
     PanelModule,
+    TableModule,
   ],
   providers: [
     {

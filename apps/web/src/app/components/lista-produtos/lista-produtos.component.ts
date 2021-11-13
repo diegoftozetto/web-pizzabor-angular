@@ -1,5 +1,11 @@
 import { Component, OnInit } from '@angular/core';
 
+import { Observable } from 'rxjs';
+
+import { Produto } from '@pizzabor/common';
+
+import { ListaProdutosService } from '../../services/lista-produtos/lista-produtos.service';
+
 @Component({
   selector: 'pizzabor-lista-produtos',
   templateUrl: './lista-produtos.component.html',
@@ -7,9 +13,17 @@ import { Component, OnInit } from '@angular/core';
 })
 export class ListaProdutosComponent implements OnInit {
 
-  constructor() { }
+  public produtos$: Observable<Produto[]> = this.listaProdutosService.getAll();
+
+  constructor(
+    private listaProdutosService: ListaProdutosService,
+  ) {
+  }
 
   ngOnInit(): void {
+  }
+
+  public editar(produto: Produto): void {
   }
 
 }
