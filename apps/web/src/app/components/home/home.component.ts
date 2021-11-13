@@ -1,5 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 
+import { MenuItem } from 'primeng/api';
+
 @Component({
   selector: 'pizzabor-home',
   templateUrl: './home.component.html',
@@ -11,5 +13,13 @@ export class HomeComponent implements OnInit {
 
   ngOnInit(): void {
   }
+
+  public items: MenuItem[] = [
+    {
+      label: 'Home',
+      icon: 'pi pi-home',
+      routerLink: [ '/home' ],
+    },
+  ];
 
 }
