@@ -1,10 +1,20 @@
-import { Directive } from '@angular/core';
+import { Directive, HostBinding, Input } from '@angular/core';
 
 @Directive({
   selector: '[pizzaborSrcDebounce]'
 })
 export class SrcDebounceDirective {
 
-  constructor() { }
+  @Input()
+  public pizzaborSrcDebounce?: string;
+
+  constructor(
+  ) {
+  }
+
+  @HostBinding('attr.src')
+  public get src(): string {
+    return this.pizzaborSrcDebounce || '';
+  }
 
 }
