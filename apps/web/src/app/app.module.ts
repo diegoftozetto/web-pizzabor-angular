@@ -1,4 +1,4 @@
-import { NgModule } from '@angular/core';
+import { ErrorHandler, NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { HttpClientModule } from '@angular/common/http';
@@ -9,6 +9,7 @@ import { TagModule } from 'primeng/tag';
 import { PanelModule } from 'primeng/panel';
 import { TableModule } from 'primeng/table';
 import { ButtonModule } from 'primeng/button';
+import { MessageService } from 'primeng/api';
 
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
@@ -18,6 +19,8 @@ import { SobreComponent } from './components/sobre/sobre.component';
 import { ListaProdutosComponent } from './components/lista-produtos/lista-produtos.component';
 import { ReplaceCategoriaPipe } from './pipes/replace-categoria.pipe';
 import { AreaRestritaComponent } from './components/area-restrita/area-restrita.component';
+
+import { AppErrorHandler } from './app-error-handler';
 
 @NgModule({
   declarations: [
@@ -42,9 +45,14 @@ import { AreaRestritaComponent } from './components/area-restrita/area-restrita.
     ButtonModule,
   ],
   providers: [
+    MessageService,
     {
       provide: 'API_BASE_URL',
       useValue: 'http://localhost:3333/api',
+    },
+    {
+      provide: ErrorHandler,
+      useClass: AppErrorHandler,
     },
   ],
   bootstrap: [
