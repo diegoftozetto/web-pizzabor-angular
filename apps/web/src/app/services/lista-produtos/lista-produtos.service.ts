@@ -25,15 +25,7 @@ export class ListaProdutosService {
   public getAll(): Observable<Produto[]> {
     return this.httpClient.get<IProduto[]>(`${this.apiBaseUrl}/produtos`).pipe(
       map((iProdutos: IProduto[]) => {
-        return iProdutos.map((iProduto: IProduto) => new Produto(
-          iProduto._id,
-          iProduto.imagem,
-          iProduto.nome,
-          iProduto.categoria,
-          iProduto.tamanho,
-          iProduto.preco,
-          iProduto.descricao,
-        ));
+        return iProdutos.map((iProduto: IProduto) => Produto.fromJson(iProduto));
       }),
     );
   }
