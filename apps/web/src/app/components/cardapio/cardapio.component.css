@@ -5,7 +5,7 @@
   margin: 0 0.5em;
 }
 
-.descricao, h2 {
+.descricao, h3 {
   overflow: hidden;
   text-overflow: ellipsis;
   white-space: nowrap;

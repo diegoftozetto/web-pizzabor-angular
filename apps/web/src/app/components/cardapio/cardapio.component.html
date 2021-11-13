@@ -1,9 +1,9 @@
 <p-card
   *ngFor="let produto of (produtos$ | async)"
-  [style]="{width: '350px'}"
+  [style]="{width: '300px'}"
   styleClass="p-card-shadow"
 >
-  <h2>{{ produto.nome }}</h2>
+  <h3 title="{{ produto.nome }}">{{ produto.nome }}</h3>
   <ng-template pTemplate="header">
     <div class="flex justify-content-end carrinho">
       <button pButton type="button" icon="pi pi-shopping-cart" class="p-button-raised p-button-rounded" (click)="carrinhoCompras()"></button>
@@ -13,7 +13,7 @@
       src="{{ produto.imagem }}"
     />
   </ng-template>
-  <p class="descricao">
+  <p class="descricao" title="{{ produto.descricao }}">
     {{ produto.descricao }}
   </p>
   <ng-template pTemplate="footer">
