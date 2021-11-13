@@ -12,7 +12,6 @@ export const carrinhosRouter = Router();
 
 carrinhosRouter.get('/:userId', async (req: Request, res: Response, next: NextFunction) => {
   const userId: number = +req.params.userId;
-  console.log(userId)
   const itemsCarrinho = await getCollection<ICarrinho>(
     req.app,
     'carrinhos',
