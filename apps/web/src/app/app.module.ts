@@ -26,6 +26,7 @@ import { AuthModule } from './modules/auth/auth.module';
 import { AuthGuard } from "./util/AuthGuard";
 import { ListaProdutosCarrinhoComponent } from './components/lista-produtos-carrinho/lista-produtos-carrinho.component';
 import { HomeLogadoComponent } from './components/home-logado/home-logado.component';
+import { CardDescontoDirective } from './directives/card-destaque/card-desconto.directive';
 
 @NgModule({
   declarations: [
@@ -38,6 +39,7 @@ import { HomeLogadoComponent } from './components/home-logado/home-logado.compon
     AreaRestritaComponent,
     ListaProdutosCarrinhoComponent,
     HomeLogadoComponent,
+    CardDescontoDirective,
   ],
   imports: [
     BrowserModule,
