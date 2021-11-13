@@ -32,6 +32,11 @@ export class HomeComponent implements OnInit {
             routerLink: [ '/home/sobre' ],
           },
           {
+            label: 'Lista de Compras',
+            icon: 'pi pi-shopping-cart',
+            routerLink: [ '/home-logado' ],
+          },
+          {
             label: 'Área Restrita',
             icon: 'pi pi-user-edit',
             routerLink: [ '/area-restrita' ],
