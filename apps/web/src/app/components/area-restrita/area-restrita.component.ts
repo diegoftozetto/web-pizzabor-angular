@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { Router } from '@angular/router';
 import { MenuItem } from 'primeng/api';
 
 @Component({
@@ -8,7 +9,10 @@ import { MenuItem } from 'primeng/api';
 })
 export class AreaRestritaComponent implements OnInit {
 
-  constructor() { }
+  constructor(
+    private router: Router,
+  ) {
+  }
 
   ngOnInit(): void {
   }
@@ -22,6 +26,8 @@ export class AreaRestritaComponent implements OnInit {
   ];
 
   public logout(): void {
+    window.localStorage.removeItem('jwt');
+    this.router.navigate([ '/home' ]);
   }
 
 }
