@@ -5,6 +5,16 @@
   margin: 0 0.5em;
 }
 
+.descricao, h2 {
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
+.carrinho {
+  padding: 0.5em;
+}
+
 p-card {
   margin: 0.2em;
 }

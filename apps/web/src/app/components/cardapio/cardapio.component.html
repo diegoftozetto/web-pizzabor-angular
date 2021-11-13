@@ -1,24 +1,26 @@
 <p-card
   *ngFor="let produto of (produtos$ | async)"
-  header="{{ produto.nome }}"
   [style]="{width: '350px'}"
   styleClass="p-card-shadow"
 >
+  <h2>{{ produto.nome }}</h2>
   <ng-template pTemplate="header">
+    <div class="flex justify-content-end carrinho">
+      <button pButton type="button" icon="pi pi-shopping-cart" class="p-button-raised p-button-rounded"></button>
+    </div>
     <img
       [attr.alt]="produto.descricao"
       src="{{ produto.imagem }}"
     />
   </ng-template>
-  <p>
+  <p class="descricao">
     {{ produto.descricao }}
   </p>
-
-  <p-tag severity="primary">
-    {{ produto.categoria | replaceCategoria }}
-  </p-tag>
   <ng-template pTemplate="footer">
-    <p-tag severity="info">
+    <p-tag severity="primary">
+      {{ produto.categoria | replaceCategoria }}
+    </p-tag>
+    <p-tag severity="info" >
       {{ produto.tamanho }}
     </p-tag>
     <p-tag severity="warning">
