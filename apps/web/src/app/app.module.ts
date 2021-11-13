@@ -17,6 +17,7 @@ import { CardapioComponent } from './components/cardapio/cardapio.component';
 import { SobreComponent } from './components/sobre/sobre.component';
 import { ListaProdutosComponent } from './components/lista-produtos/lista-produtos.component';
 import { ReplaceCategoriaPipe } from './pipes/replace-categoria.pipe';
+import { AreaRestritaComponent } from './components/area-restrita/area-restrita.component';
 
 @NgModule({
   declarations: [
@@ -26,6 +27,7 @@ import { ReplaceCategoriaPipe } from './pipes/replace-categoria.pipe';
     SobreComponent,
     ListaProdutosComponent,
     ReplaceCategoriaPipe,
+    AreaRestritaComponent,
   ],
   imports: [
     BrowserModule,

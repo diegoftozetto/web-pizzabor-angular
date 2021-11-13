@@ -1,5 +1,6 @@
 import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
+import { AreaRestritaComponent } from './components/area-restrita/area-restrita.component';
 import { CardapioComponent } from './components/cardapio/cardapio.component';
 
 import { HomeComponent } from './components/home/home.component';
@@ -33,7 +34,7 @@ const routes: Routes = [
   },
   {
     path: 'area-restrita',
-    component: HomeComponent,
+    component: AreaRestritaComponent,
     children: [
       {
         path: '',
