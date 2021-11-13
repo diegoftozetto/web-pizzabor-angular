@@ -10,16 +10,9 @@ import {
 } from '@pizzabor/common';
 
 import { getCollection } from "../util/mongodb";
+import { CATEGORIA_PRIORIDADE } from "../util/constants";
 
 export const produtosRouter = Router();
-
-const arrayCategoriaPri = [
-  'pizza_salgada',
-  'pizza_doce',
-  'massa',
-  'bebida',
-  'outro'
-];
 
 produtosRouter.get('/', async (req: Request, res: Response, next: NextFunction) => {
   const produtos = await getCollection<IProduto>(
@@ -28,7 +21,7 @@ produtosRouter.get('/', async (req: Request, res: Response, next: NextFunction) 
   ).find().toArray();
 
   const produtosOrdenadosPorPrioridade = produtos.sort((a, b) => {
-    return arrayCategoriaPri.indexOf(a.categoria.valueOf()) - arrayCategoriaPri.indexOf(b.categoria.valueOf());
+    return CATEGORIA_PRIORIDADE.indexOf(a.categoria) - CATEGORIA_PRIORIDADE.indexOf(b.categoria);
   })
 
   res.json(produtosOrdenadosPorPrioridade);
