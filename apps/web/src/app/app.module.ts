@@ -8,6 +8,7 @@ import { CardModule } from 'primeng/card';
 import { TagModule } from 'primeng/tag';
 import { PanelModule } from 'primeng/panel';
 import { TableModule } from 'primeng/table';
+import { ButtonModule } from 'primeng/button';
 
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
@@ -36,6 +37,7 @@ import { ReplaceCategoriaPipe } from './pipes/replace-categoria.pipe';
     TagModule,
     PanelModule,
     TableModule,
+    ButtonModule,
   ],
   providers: [
     {
