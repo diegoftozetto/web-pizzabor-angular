@@ -73,7 +73,11 @@ export class LoginComponent implements OnInit {
         });
         window.localStorage.setItem('jwt', result.jwt);
         setTimeout(() => {
-          this.router.navigate(['/area-restrita']);
+          if(result.usuario.administrador) {
+            this.router.navigate([ '/area-restrita' ]);
+          } else {
+            this.router.navigate([ '/home-logado' ]);
+          }
         }, 1000);
       }
     });

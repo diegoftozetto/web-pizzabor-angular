@@ -1,4 +1,8 @@
+
+
 import { Component, OnInit } from '@angular/core';
+import { MenuItem } from 'primeng/api';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'pizzabor-home-logado',
@@ -7,9 +11,25 @@ import { Component, OnInit } from '@angular/core';
 })
 export class HomeLogadoComponent implements OnInit {
 
-  constructor() { }
+  constructor(
+    private router: Router,
+  ) {
+  }
 
   ngOnInit(): void {
+  }
+
+  public items: MenuItem[] = [
+    {
+      label: 'Lista de Produtos (Carrinho)',
+      icon: 'pi pi-list',
+      routerLink: ['/home-logado/lista-produtos-carrinho'],
+    }
+  ];
+
+  public logout(): void {
+    window.localStorage.removeItem('jwt');
+    this.router.navigate(['/home']);
   }
 
 }

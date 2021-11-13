@@ -2,8 +2,10 @@ import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
 import { AreaRestritaComponent } from './components/area-restrita/area-restrita.component';
 import { CardapioComponent } from './components/cardapio/cardapio.component';
+import { HomeLogadoComponent } from './components/home-logado/home-logado.component';
 
 import { HomeComponent } from './components/home/home.component';
+import { ListaProdutosCarrinhoComponent } from './components/lista-produtos-carrinho/lista-produtos-carrinho.component';
 import { ListaProdutosComponent } from './components/lista-produtos/lista-produtos.component';
 import { SobreComponent } from './components/sobre/sobre.component';
 
@@ -33,6 +35,21 @@ const routes: Routes = [
         component: SobreComponent,
       },
     ]
+  },
+  {
+    path: 'home-logado',
+    component: HomeLogadoComponent,
+    children: [
+      {
+        path: '',
+        pathMatch: 'full',
+        redirectTo: 'lista-produtos-carrinho',
+      },
+      {
+        path: 'lista-produtos-carrinho',
+        component: ListaProdutosCarrinhoComponent,
+      }
+    ],
   },
   {
     path: 'area-restrita',
