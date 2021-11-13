@@ -10,6 +10,7 @@ import { MongoClient } from 'mongodb';
 import * as cors from 'cors';
 import { json } from 'body-parser';
 
+import { authRouter } from './app/routes/auth';
 import { cardapioRouter } from './app/routes/cardapio';
 import { produtosRouter } from './app/routes/produtos';
 
@@ -26,6 +27,8 @@ const app = express();
 
 app.use(cors());
 app.use(json());
+
+app.use('/api/auth', authRouter);
 
 app.get('/api', (req, res) => {
   res.send({ message: 'Welcome to api!' });
