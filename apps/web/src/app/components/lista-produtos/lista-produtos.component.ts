@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { ActivatedRoute, Router } from '@angular/router';
 
 import { Observable } from 'rxjs';
 
@@ -16,6 +17,8 @@ export class ListaProdutosComponent implements OnInit {
   public produtos$: Observable<Produto[]> = this.listaProdutosService.getAll();
 
   constructor(
+    private router: Router,
+    private activatedRoute: ActivatedRoute,
     private listaProdutosService: ListaProdutosService,
   ) {
   }
@@ -24,6 +27,13 @@ export class ListaProdutosComponent implements OnInit {
   }
 
   public editar(produto: Produto): void {
+    this.router.navigate([
+      '..',
+      'editar-produto',
+      produto.id,
+    ], {
+      relativeTo: this.activatedRoute,
+    });
   }
 
 }

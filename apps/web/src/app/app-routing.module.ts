@@ -44,6 +44,12 @@ const routes: Routes = [
         path: 'lista-produtos',
         component: ListaProdutosComponent,
       },
+      {
+        path: 'editar-produto',
+        loadChildren: () => import(
+          './modules/produto-edicao/produto-edicao.module'
+        ).then(mod => mod.ProdutoEdicaoModule),
+      },
     ]
   },
 ];
