@@ -19,6 +19,10 @@ export class AreaRestritaComponent implements OnInit {
 
   public items: MenuItem[] = [
     {
+      icon: 'pi pi-arrow-left',
+      routerLink: ['/home'],
+    },
+    {
       label: 'Lista de Produtos',
       icon: 'pi pi-list',
       routerLink: ['/area-restrita'],
