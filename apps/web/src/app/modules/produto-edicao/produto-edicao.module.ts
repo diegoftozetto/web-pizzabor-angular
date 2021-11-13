@@ -7,11 +7,13 @@ import { ButtonModule } from 'primeng/button';
 
 import { ProdutoEdicaoRoutingModule } from './produto-edicao-routing.module';
 import { ProdutoComponent } from './components/produto/produto.component';
+import { SrcDebounceDirective } from './directives/src-debounce/src-debounce.directive';
 
 
 @NgModule({
   declarations: [
-    ProdutoComponent
+    ProdutoComponent,
+    SrcDebounceDirective
   ],
   imports: [
     CommonModule,
@@ -22,6 +24,7 @@ import { ProdutoComponent } from './components/produto/produto.component';
   ],
   exports: [
     ProdutoComponent,
-  ]
+    SrcDebounceDirective,
+  ],
 })
 export class ProdutoEdicaoModule { }
