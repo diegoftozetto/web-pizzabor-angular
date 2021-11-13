@@ -6,6 +6,7 @@ import { HttpClientModule } from '@angular/common/http';
 import {MenubarModule} from 'primeng/menubar';
 import { CardModule } from 'primeng/card';
 import { TagModule } from 'primeng/tag';
+import { PanelModule } from 'primeng/panel';
 
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
@@ -28,6 +29,7 @@ import { SobreComponent } from './components/sobre/sobre.component';
     MenubarModule,
     CardModule,
     TagModule,
+    PanelModule,
   ],
   providers: [
     {
