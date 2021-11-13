@@ -7,6 +7,8 @@ import { HomeComponent } from './components/home/home.component';
 import { ListaProdutosComponent } from './components/lista-produtos/lista-produtos.component';
 import { SobreComponent } from './components/sobre/sobre.component';
 
+import { AuthGuard } from "./util/AuthGuard";
+
 const routes: Routes = [
   {
     path: '',
@@ -35,6 +37,7 @@ const routes: Routes = [
   {
     path: 'area-restrita',
     component: AreaRestritaComponent,
+    canActivate: [AuthGuard],
     children: [
       {
         path: '',

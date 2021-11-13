@@ -23,6 +23,7 @@ import { AreaRestritaComponent } from './components/area-restrita/area-restrita.
 
 import { AppErrorHandler } from './app-error-handler';
 import { AuthModule } from './modules/auth/auth.module';
+import { AuthGuard } from "./util/AuthGuard";
 
 @NgModule({
   declarations: [
@@ -50,6 +51,7 @@ import { AuthModule } from './modules/auth/auth.module';
   ],
   providers: [
     MessageService,
+    AuthGuard,
     {
       provide: 'API_BASE_URL',
       useValue: 'http://localhost:3333/api',
