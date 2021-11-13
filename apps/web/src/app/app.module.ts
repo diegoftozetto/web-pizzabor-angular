@@ -22,6 +22,10 @@ import { CardapioComponent } from './components/cardapio/cardapio.component';
     MenubarModule,
   ],
   providers: [
+    {
+      provide: 'API_BASE_URL',
+      useValue: 'http://localhost:3333/api',
+    },
   ],
   bootstrap: [
     AppComponent,
