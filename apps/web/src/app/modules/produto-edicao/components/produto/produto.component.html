@@ -1,1 +1,45 @@
-<p>produto works!</p>
+<div class="p-fluid">
+  <form
+    (ngSubmit)="salvar()"
+    [formGroup]="formGroup"
+  >
+    <img
+      [style]="{width: '150px'}"
+      alt="Imagem que será carregada na lista de artigos"
+    />
+    <hr>
+    <br />
+    <div class="p-field">
+      <label for="imagem">Imagem (URL)</label>
+      <input id="imagem" type="text" pInputText formControlName="imagem">
+    </div>
+    <br />
+    <div class="p-field">
+      <label for="nome">Nome</label>
+      <input id="nome" type="text" pInputText formControlName="nome">
+    </div>
+    <br />
+    <div class="p-field">
+      <label for="categoria">Categoria</label>
+      <input id="categoria" type="text" pInputText formControlName="categoria">
+    </div>
+    <br />
+    <div class="p-field">
+      <label for="tamanho">Tamanho</label>
+      <input id="tamanho" type="text" pInputText formControlName="tamanho">
+    </div>
+    <br />
+    <div class="p-field">
+      <label for="preco">Preço</label>
+      <input id="preco" type="text" pInputText formControlName="preco">
+    </div>
+    <br />
+    <div class="p-field">
+      <label for="descricao">Descriação</label>
+      <input id="descricao" type="text" pInputText formControlName="descricao">
+    </div>
+    <br />
+    <button pButton type="submit" icon="pi pi-save" label="Salvar">
+    </button>
+  </form>
+</div>
