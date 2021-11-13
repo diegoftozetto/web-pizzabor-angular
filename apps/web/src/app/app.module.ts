@@ -10,6 +10,7 @@ import { PanelModule } from 'primeng/panel';
 import { TableModule } from 'primeng/table';
 import { ButtonModule } from 'primeng/button';
 import { MessageService } from 'primeng/api';
+import { ToastModule } from 'primeng/toast';
 
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
@@ -45,6 +46,7 @@ import { AuthModule } from './modules/auth/auth.module';
     TableModule,
     ButtonModule,
     AuthModule,
+    ToastModule,
   ],
   providers: [
     MessageService,
