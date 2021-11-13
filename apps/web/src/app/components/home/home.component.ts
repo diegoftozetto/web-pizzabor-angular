@@ -16,8 +16,8 @@ export class HomeComponent implements OnInit {
 
   public items: MenuItem[] = [
     {
-      label: 'Home',
-      icon: 'pi pi-home',
+      label: 'Cardápio',
+      icon: 'pi pi-book',
       routerLink: [ '/home' ],
     },
   ];
