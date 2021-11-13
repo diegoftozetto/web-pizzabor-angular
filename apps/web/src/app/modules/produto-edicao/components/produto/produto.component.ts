@@ -20,6 +20,25 @@ import { ModifyResult } from 'mongodb';
 })
 export class ProdutoComponent implements OnInit, OnDestroy {
 
+  categorias: Object[] = [
+    { name: 'Pizza Salgada', code: 'pizza_salgada' },
+    { name: 'Pizza Doce', code: 'pizza_doce' },
+    { name: 'Massa', code: 'massa' },
+    { name: 'Bebida', code: 'bebida' },
+    { name: 'Outro', code: 'outro' },
+  ];
+
+  tamanhos: Object[] = [
+    { name: 'Pequena', code: 'Pequena' },
+    { name: 'Média', code: 'Média' },
+    { name: 'Grande', code: 'Grande' },
+    { name: '350ml', code: '350ml' },
+    { name: '500ml', code: '500ml' },
+    { name: '1L', code: '1L' },
+    { name: '2L', code: '2L' },
+    { name: 'Outro', code: 'outro' },
+  ];
+
   public formGroup: FormGroup = this.formBuilder.group({
     _id: [''],
     imagem: [''],

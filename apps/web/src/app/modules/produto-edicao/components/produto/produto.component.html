@@ -22,12 +22,12 @@
     <br />
     <div class="p-field">
       <label for="categoria">Categoria</label>
-      <input id="categoria" type="text" pInputText formControlName="categoria">
+      <p-dropdown [options]="categorias" id="categoria" formControlName="categoria" optionLabel="name" optionValue="code"></p-dropdown>
     </div>
     <br />
     <div class="p-field">
       <label for="tamanho">Tamanho</label>
-      <input id="tamanho" type="text" pInputText formControlName="tamanho">
+      <p-dropdown [options]="tamanhos" id="tamanho" formControlName="tamanho" optionLabel="name" optionValue="code"></p-dropdown>
     </div>
     <br />
     <div class="p-field">
