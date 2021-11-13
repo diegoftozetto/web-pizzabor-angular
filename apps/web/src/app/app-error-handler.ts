@@ -31,11 +31,6 @@ export class AppErrorHandler extends ErrorHandler {
   private handleHttpErrorResponse(err: HttpErrorResponse): void {
     this.ngZone.run(() => {
       if (err.status === 401) {
-        this.messageService.add({
-          severity: 'warn',
-          summary: `Usuário não autenticado`,
-          detail: 'Redirecionando para a página de login...',
-        });
         this.router.navigate(['/login'], {
           skipLocationChange: true,
         });
