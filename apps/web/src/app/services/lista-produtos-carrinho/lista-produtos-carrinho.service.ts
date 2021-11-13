@@ -3,7 +3,7 @@ import {
   Inject,
   Injectable,
 } from '@angular/core';
-import { Carrinho, ICarrinho } from '@pizzabor/common';
+import { IItem, Item } from '@pizzabor/common';
 
 import { Observable } from 'rxjs';
 import { map } from 'rxjs/operators';
@@ -19,10 +19,10 @@ export class ListaProdutosCarrinhoService {
   ) {
   }
 
-  public get(id: number): Observable<Carrinho[]> {
-    return this.httpClient.get<ICarrinho[]>(`${this.apiBaseUrl}/carrinho/${id}`).pipe(
-      map((iCarrinho: ICarrinho[]) => {
-        return iCarrinho.map((iCarrinho: ICarrinho) => Carrinho.fromJson(iCarrinho));
+  public get(id: number): Observable<Item[]> {
+    return this.httpClient.get<IItem[]>(`${this.apiBaseUrl}/carrinhos/${id}`).pipe(
+      map((iItem: IItem[]) => {
+        return iItem.map((iItem: IItem) => Item.fromJson(iItem));
       }),
     );
   }

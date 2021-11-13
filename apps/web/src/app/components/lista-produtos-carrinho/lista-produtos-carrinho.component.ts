@@ -9,7 +9,7 @@ import {
   take,
   takeUntil,
 } from 'rxjs/operators';
-import { Carrinho } from '@pizzabor/common';
+import { IItem } from '@pizzabor/common';
 
 @Component({
   selector: 'pizzabor-lista-produtos-carrinho',
@@ -18,7 +18,7 @@ import { Carrinho } from '@pizzabor/common';
 })
 export class ListaProdutosCarrinhoComponent implements OnInit {
 
-  public produtosCarrinho$!: Observable<Carrinho[]>;
+  public produtosCarrinho$!: Observable<IItem[]>;
   private subUnsubscribe: Subject<void> = new Subject();
 
   constructor(
