@@ -11,6 +11,7 @@ import * as cors from 'cors';
 import { json } from 'body-parser';
 
 import { authRouter } from './app/routes/auth';
+import { requireJwtToken } from './app/middlewares/jwt';
 import { cardapioRouter } from './app/routes/cardapio';
 import { produtosRouter } from './app/routes/produtos';
 
@@ -35,7 +36,7 @@ app.get('/api', (req, res) => {
 });
 
 app.use('/api/cardapio', cardapioRouter);
-app.use('/api/produtos', produtosRouter);
+app.use('/api/produtos', requireJwtToken, produtosRouter);
 
 const port = process.env.port || 3333;
 const server = app.listen(port, () => {
