@@ -10,7 +10,6 @@ import {
 } from '@pizzabor/common';
 
 import { getCollection } from "../util/mongodb";
-import { CATEGORIA_PRIORIDADE } from "../util/constants";
 
 export const produtosRouter = Router();
 
@@ -19,12 +18,7 @@ produtosRouter.get('/', async (req: Request, res: Response, next: NextFunction) 
     req.app,
     'produtos',
   ).find().toArray();
-
-  const produtosOrdenadosPorPrioridade = produtos.sort((a, b) => {
-    return CATEGORIA_PRIORIDADE.indexOf(a.categoria) - CATEGORIA_PRIORIDADE.indexOf(b.categoria);
-  })
-
-  res.json(produtosOrdenadosPorPrioridade);
+  res.json(produtos.sort((a, b) => a.nome.localeCompare(b.nome)));
 });
 
 produtosRouter.get('/:_id', async (req: Request, res: Response, next: NextFunction) => {
