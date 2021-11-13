@@ -11,12 +11,14 @@ import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { HomeComponent } from './components/home/home.component';
 import { CardapioComponent } from './components/cardapio/cardapio.component';
+import { SobreComponent } from './components/sobre/sobre.component';
 
 @NgModule({
   declarations: [
     AppComponent,
     HomeComponent,
     CardapioComponent,
+    SobreComponent,
   ],
   imports: [
     BrowserModule,
