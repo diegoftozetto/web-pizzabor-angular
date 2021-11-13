@@ -1,4 +1,15 @@
 import { Component, OnInit } from '@angular/core';
+import { ListaProdutosCarrinhoService } from '../../services/lista-produtos-carrinho/lista-produtos-carrinho.service';
+import { ActivatedRoute } from '@angular/router';
+
+import { Observable } from 'rxjs';
+
+import { Subject } from 'rxjs';
+import {
+  take,
+  takeUntil,
+} from 'rxjs/operators';
+import { Carrinho } from '@pizzabor/common';
 
 @Component({
   selector: 'pizzabor-lista-produtos-carrinho',
@@ -7,18 +18,22 @@ import { Component, OnInit } from '@angular/core';
 })
 export class ListaProdutosCarrinhoComponent implements OnInit {
 
-  public produtosCarrinho: any[];
+  public produtosCarrinho$!: Observable<Carrinho[]>;
+  private subUnsubscribe: Subject<void> = new Subject();
 
   constructor(
+    private listaProdutosCarrinhoService: ListaProdutosCarrinhoService,
+    private activatedRoute: ActivatedRoute,
   ) {
-    this.produtosCarrinho = [
-      {nome: "Pizza Portuguesa", imagem: "https://images2.imgbox.com/7a/01/eNA5G8dJ_o.png", preco: 49.60, categoria: "pizza_salgada", tamanho: "Grande", quantidade: 1},
-      {nome: "Pizza Sensação", imagem: "https://images2.imgbox.com/a0/52/emVpeCWE_o.png", preco: 35.60, categoria: "pizza_doce", tamanho: "Média", quantidade: 1},
-      {nome: "Coca-Cola", imagem: "https://images2.imgbox.com/a5/a4/9yD9YYxw_o.jpg", preco: 5.50, categoria: "bebida", tamanho: "350ml", quantidade: 2},
-    ]
   }
 
   ngOnInit(): void {
+    this.activatedRoute.params.pipe(
+      takeUntil(this.subUnsubscribe),
+    ).subscribe(() => {
+      const userId = 1;
+      this.produtosCarrinho$ = this.listaProdutosCarrinhoService.get(userId);
+    });
   }
 
 }

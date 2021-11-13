@@ -1,4 +1,4 @@
-<p-table [value]="produtosCarrinho">
+<p-table [value]="(produtosCarrinho$ | async) || []">
   <ng-template pTemplate="caption">
     <div class="flex flex-wrap align-items-center justify-content-between">
       <p>Lista de Produtos Selecionados</p>
