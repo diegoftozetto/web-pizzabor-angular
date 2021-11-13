@@ -1,15 +1,9 @@
+import { IItem } from "@pizzabor/common";
+
 export interface ICarrinho {
   _id: number;
 
-  imagem: string;
+  userId: number;
 
-  nome: string;
-
-  categoria: string;
-
-  tamanho: string;
-
-  preco: number;
-
-  quantidade: number;
+  items: IItem[];
 }

@@ -1,27 +1,19 @@
-import { ICarrinho } from "@pizzabor/common";
+import { ICarrinho, IItem } from "@pizzabor/common";
 
 export class Carrinho {
 
   constructor(
     public readonly id: number,
-    public imagem: string,
-    public nome: string,
-    public categoria: string,
-    public tamanho: string,
-    public preco: number,
-    public quantidade: number,
+    public userId: number,
+    public items: IItem[],
   ) {
   }
 
   public static fromJson(iProduto: ICarrinho): Carrinho {
     return new Carrinho(
       iProduto._id,
-      iProduto.imagem,
-      iProduto.nome,
-      iProduto.categoria,
-      iProduto.tamanho,
-      iProduto.preco,
-      iProduto.quantidade,
+      iProduto.userId,
+      iProduto.items,
     );
   }
 
