@@ -13,7 +13,7 @@ import { json } from 'body-parser';
 import { authRouter } from './app/routes/auth';
 import { requireJwtToken } from './app/middlewares/jwt';
 import { cardapioRouter } from './app/routes/cardapio';
-import { carrinhoRouter } from './app/routes/carrinho';
+import { carrinhosRouter } from './app/routes/carrinhos';
 import { produtosRouter } from './app/routes/produtos';
 
 MongoClient.connect(
@@ -37,7 +37,7 @@ app.get('/api', (req, res) => {
 });
 
 app.use('/api/cardapio', cardapioRouter);
-app.use('/api/carrinho', requireJwtToken, carrinhoRouter);
+app.use('/api/carrinhos', requireJwtToken, carrinhosRouter);
 app.use('/api/produtos', requireJwtToken, produtosRouter);
 
 const port = process.env.port || 3333;
