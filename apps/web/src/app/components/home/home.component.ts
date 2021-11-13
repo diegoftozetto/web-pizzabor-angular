@@ -1,7 +1,7 @@
 import { Component, OnInit } from '@angular/core';
-import { JwtHelperService } from "@auth0/angular-jwt";
 import { IUsuario } from '@pizzabor/common';
 import { MenuItem } from 'primeng/api';
+import Util from '../../util/Util';
 
 @Component({
   selector: 'pizzabor-home',
@@ -13,12 +13,8 @@ export class HomeComponent implements OnInit {
   constructor() { }
 
   ngOnInit(): void {
-    const jwt: (string | null) = window.localStorage.getItem('jwt');
-
-    if(jwt) {
-      const jwtHelper: JwtHelperService = new JwtHelperService();
-      const iUsuario: IUsuario =  jwtHelper.decodeToken(jwt);
-
+    const iUsuario: IUsuario = Util.getUsuarioLogado();
+    if(iUsuario) {
       if(iUsuario.administrador) {
         this.items = [
           {

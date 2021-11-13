@@ -6,10 +6,11 @@ import { Observable } from 'rxjs';
 
 import { Subject } from 'rxjs';
 import {
-  take,
   takeUntil,
 } from 'rxjs/operators';
 import { IItem } from '@pizzabor/common';
+
+import Util from '../../util/Util';
 
 @Component({
   selector: 'pizzabor-lista-produtos-carrinho',
@@ -31,8 +32,7 @@ export class ListaProdutosCarrinhoComponent implements OnInit {
     this.activatedRoute.params.pipe(
       takeUntil(this.subUnsubscribe),
     ).subscribe(() => {
-      const userId = 1;
-      this.produtosCarrinho$ = this.listaProdutosCarrinhoService.get(userId);
+      this.produtosCarrinho$ = this.listaProdutosCarrinhoService.get(Util.getUsuarioLogado()._id);
     });
   }
 
