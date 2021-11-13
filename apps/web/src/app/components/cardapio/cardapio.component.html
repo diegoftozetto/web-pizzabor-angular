@@ -6,7 +6,7 @@
   <h2>{{ produto.nome }}</h2>
   <ng-template pTemplate="header">
     <div class="flex justify-content-end carrinho">
-      <button pButton type="button" icon="pi pi-shopping-cart" class="p-button-raised p-button-rounded"></button>
+      <button pButton type="button" icon="pi pi-shopping-cart" class="p-button-raised p-button-rounded" (click)="carrinhoCompras()"></button>
     </div>
     <img
       [attr.alt]="produto.descricao"
