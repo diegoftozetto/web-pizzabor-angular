@@ -1,0 +1,52 @@
+use('pizzabor');
+
+db.carrinhos.drop();
+
+db.carrinhos.insertMany([
+  { '_id': 1,
+    'userId': 1,
+    'items': [
+      {
+        'produtoId': 1,
+        'imagem': "https://images2.imgbox.com/e6/36/x0Fn9cU7_o.png",
+        'nome': "Pizza de Frango e Catupiry",
+        'categoria': "pizza_salgada",
+        'tamanho': "Média",
+        'preco': 39.60,
+        'quantidade': 2,
+      },
+      {
+        'produtoId': 2,
+        'imagem': "https://images2.imgbox.com/7a/01/eNA5G8dJ_o.png",
+        'nome': "Pizza Portuguesa",
+        'categoria': "pizza_salgada",
+        'tamanho': "Grande",
+        'preco': 49.60,
+        'quantidade': 1,
+      }
+    ]
+  },
+    { '_id': 2,
+    'userId': 2,
+    'items': [
+      {
+        'produtoId': 1,
+        'imagem': "https://images2.imgbox.com/e6/36/x0Fn9cU7_o.png",
+        'nome': "Pizza de Frango e Catupiry",
+        'categoria': "pizza_salgada",
+        'tamanho': "Média",
+        'preco': 39.60,
+        'quantidade': 1,
+      },
+      {
+        'produtoId': 4,
+        'imagem': "https://images2.imgbox.com/7a/e8/Lzf39xBV_o.jpg",
+        'nome': "Guaraná Antarctica",
+        'categoria': "bebida",
+        'tamanho': "350ml",
+        'preco': 4.30,
+        'quantidade': 2,
+      }
+    ]
+  }
+]);
