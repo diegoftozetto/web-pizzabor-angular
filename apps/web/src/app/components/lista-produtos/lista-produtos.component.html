@@ -21,8 +21,8 @@
       <td>{{produto.preco | currency:'BRL'}}</td>
       <td>{{produto.categoria | replaceCategoria }}</td>
       <td>
-        <button pButton pRipple class="p-button p-button-info p-mr-2" (click)="editar(produto)">Editar</button>
-        <button pButton pRipple class="p-button p-button-danger" >Deletar</button>
+        <button pButton pRipple icon="pi pi-pencil" class="p-button p-button-info p-mr-2" (click)="editar(produto)"></button>
+        <button pButton pRipple icon="pi pi-trash" class="p-button p-button-danger" ></button>
       </td>
     </tr>
   </ng-template>
