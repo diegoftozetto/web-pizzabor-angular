@@ -1,0 +1,20 @@
+use('pizzabor');
+
+db.usuarios.drop();
+
+db.usuarios.insertMany([
+  {
+    '_id': 1,
+    'login': 'admin',
+    'senha': 'admin',
+    'nome': 'Administrador do Sistema',
+    'administrador': true,
+  },
+  {
+    '_id': 2,
+    'login': 'diego',
+    'senha': '12345',
+    'nome': 'Diego',
+    'administrador': false,
+  },
+]);
