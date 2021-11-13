@@ -13,6 +13,12 @@ export class JwtInterceptor implements HttpInterceptor {
   constructor() {}
 
   intercept(request: HttpRequest<unknown>, next: HttpHandler): Observable<HttpEvent<unknown>> {
+    const jwt: (string | null) = window.localStorage.getItem('jwt');
+    if (jwt) {
+      return next.handle(request.clone({
+        headers: request.headers.set('Authorization', `Bearer ${jwt}`),
+      }));
+    }
     return next.handle(request);
   }
 }
