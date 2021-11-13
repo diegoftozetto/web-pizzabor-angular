@@ -15,7 +15,7 @@
   </p>
 
   <p-tag severity="primary">
-    {{ produto.categoria }}
+    {{ produto.categoria | replaceCategoria }}
   </p-tag>
   <ng-template pTemplate="footer">
     <p-tag severity="info">

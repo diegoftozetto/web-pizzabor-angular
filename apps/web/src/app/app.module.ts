@@ -15,6 +15,7 @@ import { HomeComponent } from './components/home/home.component';
 import { CardapioComponent } from './components/cardapio/cardapio.component';
 import { SobreComponent } from './components/sobre/sobre.component';
 import { ListaProdutosComponent } from './components/lista-produtos/lista-produtos.component';
+import { ReplaceCategoriaPipe } from './pipes/replace-categoria.pipe';
 
 @NgModule({
   declarations: [
@@ -23,6 +24,7 @@ import { ListaProdutosComponent } from './components/lista-produtos/lista-produt
     CardapioComponent,
     SobreComponent,
     ListaProdutosComponent,
+    ReplaceCategoriaPipe,
   ],
   imports: [
     BrowserModule,
