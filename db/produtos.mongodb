@@ -1,0 +1,51 @@
+use('pizzabor');
+
+db.produtos.drop();
+
+db.produtos.insertMany([
+  {
+    '_id': 1,
+    'imagem': 'https://images2.imgbox.com/e6/36/x0Fn9cU7_o.png',
+    'nome': 'Pizza de Frango e Catupiry',
+    'categoria': 'pizza_salgada',
+    'tamanho': 'Média',
+    'preco': 39.60,
+    'descricao': 'Frango e Catupiry',
+  },
+  {
+    '_id': 2,
+    'imagem': 'https://images2.imgbox.com/7a/01/eNA5G8dJ_o.png',
+    'nome': 'Pizza Portuguesa',
+    'categoria': 'pizza_salgada',
+    'tamanho': 'Grande',
+    'preco': 49.60,
+    'descricao': 'Presunto, Tomate, Cebola e Ovo',
+  },
+  {
+    '_id': 3,
+    'imagem': 'https://images2.imgbox.com/a0/52/emVpeCWE_o.png',
+    'nome': 'Pizza Sensação',
+    'categoria': 'pizza_doce',
+    'tamanho': 'Média',
+    'preco': 35.60,
+    'descricao': 'Chocolate e Morango',
+  },
+  {
+    '_id': 4,
+    'imagem': 'https://images2.imgbox.com/7a/e8/Lzf39xBV_o.jpg',
+    'nome': 'Guaraná Antarctica',
+    'categoria': 'bebida',
+    'tamanho': '350ml',
+    'preco': 4.30,
+    'descricao': 'O original do Brasil',
+  },
+  {
+    '_id': 5,
+    'imagem': 'https://images2.imgbox.com/a5/a4/9yD9YYxw_o.jpg',
+    'nome': 'Coca-Cola',
+    'categoria': 'bebida',
+    'tamanho': '350ml',
+    'preco': 5.50,
+    'descricao': 'Refrigerante de cola',
+  },
+]);
