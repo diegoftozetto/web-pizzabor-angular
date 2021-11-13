@@ -9,6 +9,7 @@ import { MongoClient } from 'mongodb';
 
 import * as cors from 'cors';
 
+import { cardapioRouter } from './app/routes/cardapio';
 import { produtosRouter } from './app/routes/produtos';
 
 MongoClient.connect(
@@ -28,6 +29,7 @@ app.get('/api', (req, res) => {
   res.send({ message: 'Welcome to api!' });
 });
 
+app.use('/api/cardapio', cardapioRouter);
 app.use('/api/produtos', produtosRouter);
 
 const port = process.env.port || 3333;
