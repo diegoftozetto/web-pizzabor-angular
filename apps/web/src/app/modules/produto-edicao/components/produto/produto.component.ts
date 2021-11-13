@@ -3,7 +3,14 @@ import { FormBuilder, FormGroup } from '@angular/forms';
 import { ActivatedRoute, Params } from '@angular/router';
 
 import { Subject } from 'rxjs';
-import { takeUntil } from 'rxjs/operators';
+import {
+  take,
+  takeUntil,
+} from 'rxjs/operators';
+
+import { Produto } from '@pizzabor/common';
+
+import { ProdutoEdicaoService } from '../../services/produto-edicao/produto-edicao.service';
 
 @Component({
   selector: 'pizzabor-produto',
@@ -25,6 +32,7 @@ export class ProdutoComponent implements OnInit, OnDestroy {
   private subUnsubscribe: Subject<void> = new Subject();
 
   constructor(
+    private produtoEdicaoService: ProdutoEdicaoService,
     private activatedRoute: ActivatedRoute,
     private formBuilder: FormBuilder,
   ) { }
@@ -34,6 +42,11 @@ export class ProdutoComponent implements OnInit, OnDestroy {
       takeUntil(this.subUnsubscribe),
     ).subscribe((params: Params) => {
       const produtoId: number = +params.id;
+      this.produtoEdicaoService.get(produtoId).pipe(
+        take(1),
+      ).subscribe((produto: Produto) => {
+        this.formGroup.setValue(produto.asJson());
+      });
     });
   }
 

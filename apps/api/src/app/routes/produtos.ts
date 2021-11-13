@@ -26,3 +26,14 @@ produtosRouter.get('/', async (req: Request, res: Response, next: NextFunction) 
 
   res.json(produtosOrdenadosPorPrioridade);
 });
+
+produtosRouter.get('/:_id', async (req: Request, res: Response, next: NextFunction) => {
+  const _id: number = +req.params._id;
+  const produto = await getCollection<IProduto>(
+    req.app,
+    'produtos',
+  ).findOne({
+    _id: _id,
+  });
+  res.json(produto);
+});
