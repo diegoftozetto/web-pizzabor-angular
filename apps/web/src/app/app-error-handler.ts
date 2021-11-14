@@ -31,6 +31,7 @@ export class AppErrorHandler extends ErrorHandler {
   private handleHttpErrorResponse(err: HttpErrorResponse): void {
     this.ngZone.run(() => {
       if (err.status === 401) {
+        window.localStorage.removeItem('jwt');
         this.router.navigate(['/login'], {
           skipLocationChange: true,
         });
