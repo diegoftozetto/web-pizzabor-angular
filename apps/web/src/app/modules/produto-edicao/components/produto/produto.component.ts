@@ -24,6 +24,7 @@ export class ProdutoComponent implements OnInit, OnDestroy {
     { name: 'Pizza Salgada', code: 'pizza_salgada' },
     { name: 'Pizza Doce', code: 'pizza_doce' },
     { name: 'Massa', code: 'massa' },
+    { name: 'Calzone', code: 'calzone' },
     { name: 'Bebida', code: 'bebida' },
     { name: 'Outro', code: 'outro' },
   ];
