@@ -22,3 +22,8 @@ p-card {
 p-tag {
   margin: 0 0.2em;
 }
+
+img {
+  height: 290px;
+  padding: 0.5em;
+}

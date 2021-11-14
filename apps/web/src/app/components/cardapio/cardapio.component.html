@@ -1,6 +1,6 @@
 <p-card
   *ngFor="let produto of (produtos$ | async)"
-  [style]="{width: '300px'}"
+  [style]="{width: '300px', height: '550px'}"
   styleClass="p-card-shadow"
 >
   <h3 title="{{ produto.nome }}">{{ produto.nome }}</h3>
